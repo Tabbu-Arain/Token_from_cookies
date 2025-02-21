@@ -48,4 +48,5 @@ def extract_token():
         return jsonify({"error": f"Request failed: {str(e)}"}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)), debug=False)
+    port = int(os.getenv("PORT", 5000))  # Default to 5000 if PORT is not set
+    app.run(host="0.0.0.0", port=port, debug=False)
